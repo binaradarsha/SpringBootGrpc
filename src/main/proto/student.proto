@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.binara.controller.grpc";
+option java_outer_classname = "StudentProto";
+option objc_class_prefix = "STD";
+
+service Student {
+    rpc getStudent (StudentRequest) returns (StudentResponse) {}
+}
+
+message StudentRequest {
+    int32 id = 1;
+}
+
+message StudentResponse {
+    int32 id = 1;
+    string name = 2;
+    int32 age = 3;
+}
